@@ -20,16 +20,6 @@ This repository hosts a collection of Docker Compose YAML configurations designe
 - Easy setup and deployment
 - Scalable and maintainable architecture
 
-## Available Configurations
-
-The repository contains the following YAML configurations:
-
-1. **Database Setup**: PostgreSQL and Redis services
-2. **Web Server**: Nginx and Node.js
-3. **Monitoring**: Prometheus and Grafana
-4. **Messaging**: RabbitMQ
-5. **Media Services**: Icecast and Liquidsoap
-
 ## Prerequisites
 
 - [Git](https://git-scm.com/) (2.30.0 or higher)
