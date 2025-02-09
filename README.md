@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center" text="center"S>
 <img width="666" alt="psyencelab" src="https://github.com/user-attachments/assets/5bb0aa55-1ed2-4a00-a12e-793b4d2a7cc4" />
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
