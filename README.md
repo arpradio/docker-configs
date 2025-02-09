@@ -5,7 +5,9 @@
   [![Docker](https://img.shields.io/badge/Docker-20.10.8-blue.svg)](https://www.docker.com/)
 </div>
 
-<div align="center"># Docker Compose YAML Configs for ARP Radio</div>
+
+:# Docker Compose YAML Configs for ARP Radio:
+
 
 ## Overview
 
