@@ -1,11 +1,10 @@
-# Docker Compose YAML Configs for ARP Radio
-
 <div align="center">
 <img width="666" alt="psyencelab" src="https://github.com/user-attachments/assets/5bb0aa55-1ed2-4a00-a12e-793b4d2a7cc4" />
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   [![Docker](https://img.shields.io/badge/Docker-20.10.8-blue.svg)](https://www.docker.com/)
 </div>
+# Docker Compose YAML Configs for ARP Radio
 
 ## Overview
 
