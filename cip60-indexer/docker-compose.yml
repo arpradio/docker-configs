@@ -21,77 +21,6 @@ services:
     restart: always
 
   api:
-    build:
-      context: ./cip60Indexer
-      dockerfile: Dockerfile.api
-    container_name: cip60-api
-    ports:
-      - "3000:3000"
-    depends_on:
-      postgres:
-        condition: service_healthy
-    environment:
-      - DB_HOST=postgres
-      - DB_PORT=5432
-      - DB_USER=postgres
-      - DB_PASSWORD=C@RD@N0123
-      - DB_NAME=cip60
-      - OGMIOS_URL=ws://cardano:1337
-    networks:
-      - cip60-network
-    restart: always
-
-  cardano-ogmios:
-    image: cardanosolutions/cardano-node-ogmios:v6.11.2_10.1.4-mainnet
-    container_name: cardano
-    ports:
-      - "1337:1337"
-    volumes:
-      - ogmios-db:/db
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:1337"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-    networks:
-      - cip60-network
-    restart: always
-
-  dashboard:
-    build:
-      context: ./cip60Indexer
-      dockerfile: Dockerfile.dashboard
-    container_name: cip60-dashboard
-    ports:
-      - "8080:8080"
-    environment:
-      - API_URL=http://api:3000
-      - WS_URL=ws://api:3000/ws
-    depends_on:
-      - api
-    networks:services:
-  postgres:
-    image: postgres:14
-    container_name: cip60-db
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_DB=cip60
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=C@RD@N0123
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-      - ./init-db:/docker-entrypoint-initdb.d
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    networks:
-      - cip60-network
-    restart: always
-
-  api:
     image: sudoscientist/cip60-api:latest
     container_name: cip60-api
     ports:
@@ -137,17 +66,6 @@ services:
     depends_on:
       - api
     networks:
-      - cip60-network
-    restart: always
-
-volumes:
-  ogmios-db:
-  postgres-data:
-
-networks:
-  cip60-network:
-    driver: bridge
-
       - cip60-network
     restart: always
 
