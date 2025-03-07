@@ -58,6 +58,7 @@ CREATE EXTENSION IF NOT EXISTS pg_trgm;
 
 CREATE INDEX IF NOT EXISTS idx_metadata_json_gin ON cip60.assets USING GIN (metadata_json);
 CREATE INDEX IF NOT EXISTS idx_metadata_json_text ON cip60.assets USING GIN ((metadata_json::text) gin_trgm_ops);
+CREATE INDEX IF NOT EXISTS idx_assets_metadata_json ON cip60.assets USING GIN(metadata_json jsonb_path_ops);
 
 ALTER DEFAULT PRIVILEGES IN SCHEMA cip60 GRANT ALL ON TABLES TO postgres;
 ALTER DEFAULT PRIVILEGES IN SCHEMA cip60 GRANT USAGE, SELECT ON SEQUENCES TO postgres;
